@@ -13,8 +13,10 @@ public class StockChangeCalculator {
         Double day2price = Double.valueOf(input.next());
 
         // STOUT
-        System.out.println(ticker + " has change "+(calculatingPercentChange(day1price,day2price)) +" % in one day.");
+        System.out.println(ticker + " has change "+df.format(calculatingPercentChange(day1price,day2price)) +" % in one day.");
     }
+
+    private static final DecimalFormat df = new DecimalFormat("0.00");
 
     public static double calculatingPercentChange(Double price1, Double price2) {
         Double porcChange = (price2 * 100 / price1) - 100;
