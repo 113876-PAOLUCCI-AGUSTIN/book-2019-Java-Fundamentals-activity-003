@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.text.DecimalFormat;
 
 public class StockChangeCalculator {
     public static void main(String[] args) {
@@ -10,5 +11,13 @@ public class StockChangeCalculator {
         Double day1price = Double.valueOf(input.next());
         System.out.println("Enter the "+ticker+"'s day 2 value: ");
         Double day2price = Double.valueOf(input.next());
+
+        // STOUT
+        System.out.println(ticker + " has change "+(calculatingPercentChange(day1price,day2price)) +" % in one day.");
+    }
+
+    public static double calculatingPercentChange(Double price1, Double price2) {
+        Double porcChange = (price2 * 100 / price1) - 100;
+        return porcChange;
     }
 }
